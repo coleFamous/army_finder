@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armées de Warhammer 40K</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png"></head>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img class="logo-img" src="assets/logo/logo.png" alt="logo">Army Finder</a>
+            </div>
+            <button class="mobile-menu-button" id="mobileMenuToggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="w40k.html" class="active">W40K</a></li>
+                    <li><a href="aos.html">Age of Sigmar</a></li>
+                    <li><a href="#">Contacter</a></li>
+                    <li class="hidden-mobile"><a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="hidden-mobile"><a href="#" title="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+                    <li class="hidden-mobile"><a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                <div class="nav-social-icons-mobile">
+                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn"><i class="fas fa-plus-circle"></i>Ajouter une armée</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero hero-w40k">
+        <div class="hero-content">
+            <h1>Warhammer 40K</h1>
+            <p class="description">“In the grim darkness of the far future there is only war.”</p>
+            <a href="#" class="btn-details">Voir les armées<i class="fas fa-arrow-down"></i></a>
+        </div>
+        <!-- <div class="hero-nav">
+            <button title="Précédent"><i class="fas fa-chevron-left"></i></button>
+            <button title="Suivant"><i class="fas fa-chevron-right"></i></button>
+        </div> -->
+    </section>
+        <main class="main-content">
+        <div class="container">
+            <div class="armies-column">
+                <div class="armies-header">
+                    <h2>Derniers Ajouts</h2>
+                    <div class="sort-options">
+                        <label for="sortBy">Trier par:</label>
+                        <select id="sortBy" name="sortBy">
+                            <option value="default">Défaut</option>
+                            <option value="points_asc">Points: Croissant</option>
+                            <option value="points_desc">Points: Décroissant</option>
+                            <option value="newest">Nouveautés</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="army-grid" id="resultList">
+                    <!-- Armées générées en JS -->
+                </div>
+                <div class="pagination">
+                    <a href="#"><i class="fas fa-chevron-left"></i> Précedent</a>
+                    <a href="#" class="active-page">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">Suivant <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+
+            <aside class="sidebar-column">
+                <div class="search-widget">
+                    <h3>Rechercher</h3>
+                    <form action="#">
+                        <label for="keyword">Mots-clés</label>
+                        <input type="text" id="keyword" name="keyword" placeholder="e.g. Dynastie Szarekh">
+
+                        <label for="armyType">Faction</label>
+                        <select id="armyType" name="armyType">
+                            <!-- Généré dans le JS -->
+                        </select>
+
+
+                        <label for="edition_search">Edition</label>
+                        <input type="text" id="edition_search" name="edition_search" placeholder="e.g. 2023">
+
+                        <label>Points d'armée</label>
+                        <div class="points-slider-label">
+                            <span id="pointsMinDisplay">500</span>
+                            <span id="pointsMaxDisplay">3,000</span>
+                        </div>
+                        <div class="points-slider-track">
+                            <div class="points-slider-range"></div>
+                            <div class="points-slider-thumb thumb-left"></div>
+                            <div class="points-slider-thumb thumb-right"></div>
+                        </div>
+                        <input type="hidden" name="points_min" id="points_min_hidden" value="500">
+                        <input type="hidden" name="points_max" id="points_max_hidden" value="3000">
+
+                        <button type="submit" class="btn-search"><i class="fas fa-search"></i> RECHERCHER</button>
+                    </form>
+                </div>
+
+                <div class="search-widget">
+                    <h3>Les plus recherchés</h3>
+                    <article class="army-card sidebar-featured-army">
+                        <img src="assets/img/orks.jpg" alt="Armée d'orks">
+                        <div class="army-card-content">
+                            <div class="w40k-tag">WARHAMMER 40K</div>
+                            <h3><a href="#">Ork</a></h3>
+                            <p class="points">1,000 points</p>
+                            <div class="army-card-actions"> <a href="#">Détails <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="army-card sidebar-featured-army">
+                        <img src="assets/img/ultramarine.jpg" alt="Armée ultramarine">
+                        <div class="army-card-content">
+                            <div class="w40k-tag">WARHAMMER 40K</div>
+                            <h3><a href="#">Ultramarines</a></h3>
+                            <p class="points">3,000 points</p>
+                            <div class="army-card-actions">
+                                <a href="#">Détails <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Politique de Confidentialité</a>
+                <a href="#">Conditions d'utilisation</a>
+            </div>
+            <p>Site non-affilié à Games Workshop</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTopBtn" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
+    <script type="module" src="pages/displayW40KHTML.js"></script>
+    
+</body>
+</html>
