@@ -213,14 +213,14 @@ nav ul li a.social-icon::after {
 /* Le reste de votre CSS reste ici... */
 /* ... (tout le reste de votre style.css) ... */
 .hero-index {
-    background-image: url('assets/img/custodes.jpg');
+    background-image: url('/assets/img/custodes.jpg');
 }
 .hero-w40k {
-    background-image: url('assets/img/titus.jpg');
+    background-image: url('/assets/img/titus.jpg');
     background-position: center top;
 }
 .hero-aos {
-    background-image: url('assets/img/aos-banner.jpeg');
+    background-image: url('/assets/img/aos-banner.jpeg');
     background-position: center top;
 }
 .hero::before {

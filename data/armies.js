@@ -1,7 +1,7 @@
 export let armies = [
     {
         id: 1,
-        image: "assets/img/cadiens.jpg",
+        image: "/assets/img/cadiens.jpg",
         gallery: ["assets/img/gallery/cadiens/karskin.jpg", "assets/img/gallery/cadiens/minis.jpg", "assets/img/gallery/cadiens/sm2.avif"],
         points: 500,
         name: "Cadiens",
@@ -16,7 +16,7 @@ export let armies = [
     }, 
     {
         id: 2,
-        image: "assets/img/necrons.webp",
+        image: "/assets/img/necrons.webp",
         gallery: ["assets/img/gallery/necrons/royal_warden.jpg", "assets/img/gallery/necrons/immortals.webp", "assets/img/gallery/necrons/overlord.jpg"],
         points: 1.500,
         name: "Dynastie Szarekh",
@@ -31,7 +31,7 @@ export let armies = [
     },
     {
         id: 3,
-        image: "assets/img/ossiarch.jpg",
+        image: "/assets/img/ossiarch.jpg",
         gallery: ["assets/img/gallery/ossiarch/immortis_guard.jpg", "assets/img/gallery/ossiarch/liege_kavalos.jpg", "assets/img/gallery/ossiarch/mortek_crawler.jpg"],
         points: 2.500,
         name: "Armée squelette",
@@ -46,7 +46,7 @@ export let armies = [
     },
     {
         id: 4,
-        image: "assets/img/custodes.jpg",
+        image: "/assets/img/custodes.jpg",
         gallery: ["assets/img/gallery/custodes/wardens.jpg", "assets/img/gallery/custodes/valoris.webp", "assets/img/gallery/custodes/akmon.jpg"],
         points: 2.000,
         name: "Custodes",
@@ -61,7 +61,7 @@ export let armies = [
     },
     {
         id: 5,
-        image: "assets/img/orks.jpg",
+        image: "/assets/img/orks.jpg",
         gallery: ["assets/img/gallery/orks/dakka_boyz.webp", "assets/img/gallery/orks/gretchin.jpg", "assets/img/gallery/orks/warboss.jpeg"],
         points: 1.000,
         name: "Dakka Boyz",
@@ -76,7 +76,7 @@ export let armies = [
     },
     {
         id: 6,
-        image: "assets/img/ultramarine.jpg",
+        image: "/assets/img/ultramarine.jpg",
         gallery: ["assets/img/gallery/ultramarine/john_blanche.jpg", "assets/img/gallery/ultramarine/titus.jpg", "assets/img/gallery/ultramarine/victrix.webp"],
         points: 3.000,
         name: "Space Marines Ultramarines",
@@ -91,7 +91,7 @@ export let armies = [
     },
     {
         id: 7,
-        image: "assets/img/bretonnie.jpg",
+        image: "/assets/img/bretonnie.jpg",
         gallery: ["assets/img/gallery/bretonnie/knights.webp", "assets/img/gallery/bretonnie/peasant.jpg", "assets/img/gallery/bretonnie/pegasus_knight.webp"],
         points: 3.000,
         name: "Armée bretonienne",
@@ -106,7 +106,7 @@ export let armies = [
     },
     {
         id: 8,
-        image: "assets/img/skaven.jpg",
+        image: "/assets/img/skaven.jpg",
         gallery: ["assets/img/gallery/skaven/clan_moulder.jpg", "assets/img/gallery/skaven/clan_skryre.webp", "assets/img/gallery/skaven/clan_eshin.jpeg"],
         points: 1.500,
         name: "Clan Moulder",

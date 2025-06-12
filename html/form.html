@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Army Finder</title>
+    <title>Ajouter une armée</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Metamorphous&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/form.css">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img class="logo-img" src="assets/logo/logo.png" alt="logo">Army Finder</a>
+                <a href="index.html"><img class="logo-img" src="/assets/logo/logo.png" alt="logo">Army Finder</a>
             </div>
             <button class="mobile-menu-button" id="mobileMenuToggle" aria-label="Ouvrir le menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="w40k.html">W40K</a></li>
                     <li><a href="aos.html">Age of Sigmar</a></li>
                     <li><a href="#">Contacter</a></li>
-                    <li class="hidden-mobile"><a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="hidden-mobile"><a href="#" title="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a></li>
-                    <li class="hidden-mobile"><a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                    <li class="hidden-mobile"><a href="inscription.html" title="inscription" class="social-icon"><i class="fa-solid fa-user-plus"></i></a></li>
+                    <li class="hidden-mobile"><a href="connexion.html" title="connexion" class="social-icon"><i class="fa-solid fa-user-lock"></i></a></li>
                 </ul>
                 <div class="nav-social-icons-mobile">
-                    <a href="#" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" title="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="inscription.html" title="inscription" class="social-icon"><i class="fa-solid fa-user-plus"></i></a>
+                    <a href="connexion.html" title="connexion" class="social-icon"><i class="fa-solid fa-user-lock"></i></a>
                 </div>
             </nav>
             <div class="header-actions">
@@ -46,13 +44,19 @@
     <main class="form-flex">
         <h2 class="form-title">Proposer une nouvelle armée</h2>
         <label for="image">Envoyer une image d'armée</label>
-        <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
+        <input type="file" id="image" name="image" accept="image/png, image/jpeg">
 
-        <label for="points">Donner les points d'armée</label>
-        <input type="number" id="points" name="points">
+        <label for="gallery">Pour envoyer des images supplémentaires</label>
+        <input type="file" id="gallery" name="gallery" accept="image/png, image/jpeg" multiple>
 
         <label for="name">Donner un nom d'armée</label>
         <input type="text" id="name" name="name" maxlength="26" placeholder="26 Caractères maximum">
+
+        <label for="points">Donner les points d'armée</label>
+        <input type="number" id="points" name="points">
+        
+        <label for="univers">Sélectionner l'univers</label>
+        <select name="univers" id="univers"></select>
 
         <label for="faction">Sélectionner la faction ou l'ajouter</label>
         <select name="faction" id="faction"></select>
@@ -60,14 +64,14 @@
         <label for="edition">Donner l'année d'édition</label>
         <input type="number" name="edition" id="edition" min="1900" max="2025" value="2024" />
 
-        <label for="univers">Sélectionner l'univers</label>
-        <select name="univers" id="univers"></select>
-
         <label for="link">Lien vers la boutique Warhammer</label>
         <input type="text" name="link" id="link">
 
-        <label for="description">Donner une description de l'armée</label>
-        <textarea name="description" id="description" rows="5" cols="33"></textarea>
+        <label for="description">Donner une description courte du lore</label>
+        <textarea name="description" id="description" rows="5" cols="33" maxlength="160"></textarea>
+
+        <label for="armyDetails">Détailler les unités de l'armée</label>
+        <textarea name="armyDetails" id="armyDetails" rows="5" cols="33"></textarea>
 
         <input type="submit" name="" id="submit-army">
     </main>
@@ -82,6 +86,6 @@
     </footer>
 
     <a href="#" class="back-to-top" id="backToTopBtn" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
-
+    <script type="module" src="/pages/formHTML.js"></script>
 </body>
 </html>

@@ -27,6 +27,8 @@ header {
 .form-flex input[type="text"],
 .form-flex input[type="number"],
 .form-flex input[type="file"],
+.form-flex input[type="email"],
+.form-flex input[type="password"],
 .form-flex select,
 .form-flex textarea {
     width: 100%;
@@ -89,6 +91,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#description {
+#description, #armyDetails {
     resize: vertical;
 }
