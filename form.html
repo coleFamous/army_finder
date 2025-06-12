@@ -23,7 +23,7 @@
             </button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html" class="active">Accueil</a></li>
                     <li><a href="w40k.html">W40K</a></li>
                     <li><a href="aos.html">Age of Sigmar</a></li>
                     <li><a href="#">Contacter</a></li>
@@ -44,6 +44,7 @@
     </header>
 
     <main class="form-flex">
+        <h2 class="form-title">Proposer une nouvelle armée</h2>
         <label for="image">Envoyer une image d'armée</label>
         <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
 
@@ -51,7 +52,7 @@
         <input type="number" id="points" name="points">
 
         <label for="name">Donner un nom d'armée</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" maxlength="26" placeholder="26 Caractères maximum">
 
         <label for="faction">Sélectionner la faction ou l'ajouter</label>
         <select name="faction" id="faction"></select>
@@ -66,7 +67,7 @@
         <input type="text" name="link" id="link">
 
         <label for="description">Donner une description de l'armée</label>
-        <input type="text" name="description" id="description">
+        <textarea name="description" id="description" rows="5" cols="33"></textarea>
 
         <input type="submit" name="" id="submit-army">
     </main>

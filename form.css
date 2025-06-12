@@ -1,19 +1,94 @@
+header {
+    background-color: var(--bordeaux); /* Green */
+}
+
+.form-title {
+    font-family: 'Metamorphous', serif;
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--noir);
+    margin-bottom: 20px;
+}
+
 .form-flex {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 40%;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow:  0 0 2em rgba(0, 0, 0, 0.738);
+    gap: 1.2rem; /* Légèrement augmenter l'espacement */
+    width: 90%; /* Plus flexible pour les petits écrans */
+    max-width: 700px; /* Limite la largeur sur les très grands écrans */
+    margin: 40px auto; /* Un peu plus d'espace en haut */
+    padding: 30px; /* Plus d'espace intérieur */
+    background-color: #fff; /* Fond blanc explicite */
+    border-radius: 8px; /* Coins arrondis */
+    border: 1px solid #e0e0e0; /* Bordure subtile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
 }
 
-#submit-army {
-    width: 20%;
-    padding: 10px;
-    background-color: #4CAF50; /* Green */
-    color: white;
+.form-flex input[type="text"],
+.form-flex input[type="number"],
+.form-flex input[type="file"],
+.form-flex select,
+.form-flex textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif; /* Utiliser la police du site */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-flex input:focus,
+.form-flex select:focus,
+.form-flex textarea:focus {
+    outline: none;
+    border-color: var(--couleur-primaire); /* Utilise la couleur primaire du site */
+    box-shadow: 0 0 5px var(--bordeaux-transparent); /* Ombre douce assortie */
+}
+
+.form-flex label {
+    font-weight: bold;
+    font-family: 'Sora', sans-serif; /* Police des titres pour les labels */
+    color: var(--noir);
+    margin-bottom: -5px; /* Rapproche le label de son champ */
+}
+
+.form-flex input[type="file"]::file-selector-button {
+    padding: 10px 15px;
+    background-color: var(--noir);
+    color: var(--couleur-primaire);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-flex input[type="file"]::file-selector-button:hover {
+    background-color: var(--bordeaux);
+}
+
+#submit-army {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 20px auto 0 auto; /* Centrer le bouton et ajouter de l'espace au-dessus */
+    background-color: var(--bordeaux);
+    color: white;
+    border: 2px solid var(--bordeaux);
+    border-radius: 50px; /* Forme de pilule comme les autres boutons */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#submit-army:hover {
+    background-color: transparent;
+    color: var(--bordeaux);
+    transform: translateY(-3px); /* Effet de soulèvement */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#description {
+    resize: vertical;
 }

@@ -1,815 +1,759 @@
 /* Réinitialisation de base et styles du corps */
-        body, h1, h2, h3, p, ul, li, a, button, select, input {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            color: #333;
-        }
-
-        h1, h2, h3, nav ul li a {
-            font-family: "Sora", sans-serif;
-        }
-
-        :root {
-            --rouge: #9a1115;
-            --noir: #3B3B3B;
-            --couleur-primaire: #EDE5C0;
-            --couleur-w40k: #7394A5;
-            --couleur-fantasy: #D1B13B;
-        }
-
-        body {
-            background-color: #f4f4f4;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* --- En-tête --- */
-        header {
-            background-color: var(--noir);
-            color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            font-family: "Metamorphous", serif;
-            gap: 5px;
-        }
-        .logo a:hover {
-            color: var(--couleur-primaire);
-        }
-
-        .logo a img {
-            max-height: 50px;
-            width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: color 0.3s ease, background-color 0.3s ease;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--noir);
-            background-color: var(--couleur-primaire);
-        }
-        nav ul li a.social-icon {
-            padding: 5px;
-            font-size: 1.1em;
-        }
-        nav ul li a.social-icon:hover {
-            color: var(--couleur-primaire);
-            background-color: transparent;
-        }
-        /* Style pour cacher les icônes sociales sur mobile initialement */
-        .hidden-mobile {
-            /* Sera géré par media queries pour affichage sur grand écran */
-        }
-        .nav-social-icons-mobile {
-            display: none; /* Caché par défaut, géré par JS */
-            text-align: center;
-            margin-top: 10px;
-        }
-
-
-        .header-actions .btn {
-            background-color: var(--couleur-primaire);
-            color: var(--noir);
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-        }
-        .header-actions .btn i {
-            margin-right: 8px;
-        }
-
-        .header-actions .btn:hover {
-            background-color: var(--couleur-primaire);
-        }
-
-        .mobile-menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8em;
-            cursor: pointer;
-        }
-
-        /* --- Section Héros --- */
-        .hero {
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: flex-end;
-            padding: 30px;
-            color: #fff;
-        }
-
-        .hero-index {
-            background-image: url('assets/img/custodes.jpg');
-        }
-
-        .hero-w40k {
-            background-image: url('assets/img/titus.jpg');
-            background-position: center top;
-        }
-
-        .hero-aos {
-            background-image: url('assets/img/aos-banner.jpeg');
-            background-position: center top;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 2.8em;
-            margin-bottom: 10px;
-            color: #fff;
-            font-weight: 900;
-        }
-
-        .hero-content .faction {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            color: #eee;
-        }
-         .hero-content .faction i {
-            margin-right: 8px;
-            color: var(--couleur-primaire);
-        }
-
-        .hero-content .description {
-            font-size: 0.9em;
-            margin-bottom: 20px;
-            color: #ddd;
-        }
-
-        .hero-content .points {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--couleur-primaire);
-            margin-bottom: 20px;
-        }
-
-        .hero-content .btn-details {
-            background-color: var(--couleur-primaire);
-            color: var(--noir);
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-        }
-        .hero-content .btn-details i {
-            margin-left: 8px;
-        }
-
-        .hero-content .btn-details:hover {
-            background-color: var(--couleur-primaire);
-        }
-
-        .hero-nav {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            right: 15px;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .hero-nav button {
-            background-color: rgba(0,0,0,0.3);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-nav button:hover {
-            background-color: rgba(0,0,0,0.6);
-        }
-
-        /* --- Section Principale (Armées et Recherche) --- */
-        .main-content {
-            padding: 30px 0;
-        }
-
-        .main-content .container {
-            display: flex;
-            gap: 30px;
-        }
-
-        .armies-column {
-            flex: 3;
-        }
-
-        .sidebar-column {
-            flex: 1;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .flex-search-reset{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            gap: 10px;;
-        }
-
-        .armies-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .armies-header h2 {
-            font-size: 1.8em;
-            font-weight: 700;
-        }
-
-        .sort-options label,
-        .sort-options select,
-        .view-toggle button {
-            margin-left: 10px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9em;
-            background-color: #fff;
-        }
-         .view-toggle button {
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-         }
-        .view-toggle button:hover,
-        .view-toggle button.active {
-            background-color: var(--noir);
-            color: #fff;
-            border-color: var(--couleur-primaire);
-        }
-
-        /* --- Grille des Armées --- */
-        .army-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .army-card {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .army-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-
-        .army-card .w40k-tag, .army-card .aos-tag {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            color: white;
-            padding: 4px 12px 4px 18px;
-            font-size: 0.75em;
-            font-weight: bold;
-            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
-        }
-
-        .army-card .w40k-tag {
-            background-color: var(--couleur-w40k);
-        }
-
-        .army-card .aos-tag {
-            background-color: var(--couleur-fantasy);
-        }
-
-        .army-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .army-card-content {
-            padding: 15px;
-        }
-
-        .army-card-content h3 {
-            font-size: 1.3em;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        .army-card-content h3 a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-        .army-card-content h3 a:hover {
-            color: var(--couleur-w40k);
-        }
-
-        .army-card-content .points {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--noir);
-            margin-bottom: 10px;
-        }
-
-        .army-card-header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .date-registered {
-            font-size: 0.85em;
-            margin-bottom: 10px;
-        }
-
-        .army-details-list {
-            list-style: none;
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        .army-details-list li {
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .army-details-list li i {
-            margin-right: 8px;
-            color: #999;
-            width: 18px;
-            text-align: center;
-            font-size: 0.9em;
-        }
-
-        .army-card-actions {
-            border-top: 1px solid var(--noir);
-            padding-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .army-card-actions a {
-            color: var(--noir);
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-        }
-        .army-card-actions a i {
-            margin-left: 5px;
-        }
-         .army-card-actions a:hover {
-            text-decoration: underline;
-        }
-        .army-card-actions .icon-actions button {
-            background: none;
-            border: none;
-            color: #777;
-            font-size: 1.2em;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        .army-card-actions .icon-actions button:hover {
-            color: var(--rouge);
-        }
-
-        /* --- Pagination --- */
-        .pagination {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .pagination a {
-            padding: 8px 12px;
-            margin: 0 3px;
-            border: 1px solid #ddd;
-            text-decoration: none;
-            color: #333;
-            border-radius: 3px;
-            background-color: #fff;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .pagination a:hover {
-            background-color: #eee;
-            border-color: #ccc;
-        }
-        .pagination a.active-page { /* Classe pour la page actuelle */
-            border-color: var(--couleur-primaire);
-            color: #fff;
-            background-color: var(--noir);
-        }
-        .pagination a i { /* Style pour les icônes dans la pagination */
-            font-size: 0.8em;
-        }
-
-
-        /* --- Barre Latérale de Recherche --- */
-        .search-widget {
-            margin-bottom: 25px;
-        }
-
-        .search-widget h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--couleur-primaire);
-            padding-bottom: 5px;
-            display: inline-block;
-            font-weight: 700;
-        }
-
-        .search-widget label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-
-        .search-widget input[type="text"],
-        .search-widget select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9em;
-            transition: border-color 0.3s ease;
-        }
-        .search-widget input[type="text"]:focus,
-        .search-widget select:focus {
-            border-color: var(--couleur-primaire);
-            outline: none;
-        }
-
-        .points-slider-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-        }
-        .points-slider-track {
-            position: relative;
-            height: 40px;
-            margin: 20px 0;
-        }
-        .points-slider-track input[type="range"] {
-            position: absolute;
-            left: 0; right: 0; top: 50%;
-            width: 100%;
-            pointer-events: none; /* Pour que les thumbs custom prennent le dessus */
-            background: none;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 0;
-            z-index: 2;
-        }
-        .points-slider-track input[type="range"]::-webkit-slider-thumb {
-            pointer-events: all;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            background: var(--couleur-primaire, #FFD700);
-            border: 2px solid #333;
-            cursor: pointer;
-            -webkit-appearance: none;
-            appearance: none;
-            z-index: 3;
-        }
-        .points-slider-track input[type="range"]:focus {
-            outline: none;
-        }
-        .points-slider-range {
-            position: absolute;
-            height: 6px;
-            background: var(--couleur-primaire, #FFD700);
-            border-radius: 3px;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-        /* Pour Firefox */
-        .points-slider-track input[type="range"]::-moz-range-thumb {
-            pointer-events: all;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            background: var(--couleur-primaire, #FFD700);
-            border: 2px solid #333;
-            cursor: pointer;
-        }
-        .points-slider-track input[type="range"]::-ms-thumb {
-            pointer-events: all;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            background: var(--couleur-primaire, #FFD700);
-            border: 2px solid #333;
-            cursor: pointer;
-        }
-        .points-slider-track input[type="range"]::-ms-fill-lower,
-        .points-slider-track input[type="range"]::-ms-fill-upper {
-            background: none;
-        }
-        .points-slider-track input[type="range"]::-webkit-slider-runnable-track {
-            background: none;
-        }
-        .points-slider-track input[type="range"]::-moz-range-track {
-            background: none;
-        }
-        .points-slider-track input[type="range"]::-ms-tooltip {
-            display: none;
-        }
-
-        .btn-search {
-            background-color: #333;
-            color: #fff;
-            padding: 12px;
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .btn-search i {
-            margin-right: 8px;
-        }
-
-        .btn-search:hover {
-            background-color: #555;
-        }
-        
-        /* Styles pour les cartes d'armées en vedette dans la sidebar */
-        .sidebar-featured-army {
-            margin-bottom: 15px;
-            font-size: 0.9em; /* Applique la taille de police de base pour cette carte */
-        }
-        .sidebar-featured-army .army-card-content {
-            padding: 10px; /* Padding spécifique pour le contenu */
-        }
-        .sidebar-featured-army h3 {
-            font-size: 1.1em; /* Taille de titre spécifique */
-        }
-        .sidebar-featured-army .points {
-            font-size: 1em; /* Taille de prix spécifique */
-        }
-        .sidebar-featured-army .army-card-actions a { /* Ajustement pour le lien details */
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-
-
-        /* --- Pied de page --- */
-        footer {
-            background-color: #222;
-            color: #aaa;
-            padding: 30px 0;
-            text-align: center;
-            font-size: 0.9em;
-            margin-top: 30px;
-        }
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        footer p {
-            margin-bottom: 10px;
-            color: #aaa;
-        }
-        footer .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            margin-left: 15px;
-            transition: color 0.3s ease;
-        }
-        footer .footer-links a:hover {
-            color: #fff;
-        }
-
-        /* Bouton "Retour en haut" */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--couleur-primaire);
-            color: white;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.2em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 100;
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        .back-to-top:hover {
-            background-color: var(--couleur-primaire);
-        }
-
-
-        /* --- Styles responsives --- */
-        @media (max-width: 992px) { /* Tablette */
-            .main-content .container {
-                flex-direction: column;
-            }
-            .armies-column, .sidebar-column {
-                flex: none;
-                width: 100%;
-            }
-            .sidebar-column {
-                margin-top: 30px;
-            }
-            .hidden-mobile { /* Cache les icônes sociales du menu principal sur tablette et mobile */
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) { /* Mobile */
-            header .container {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-            .logo {
-                flex-shrink: 0;
-            }
-            nav { /* Le menu principal est caché par défaut, géré par JS */
-                width: 100%;
-                margin-top: 10px;
-                display: none;
-                order: 3;
-            }
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-            nav ul li {
-                margin: 5px 0;
-                width: 100%;
-            }
-            nav ul li a {
-                display: block;
-                text-align: center;
-                padding: 10px;
-            }
-            /* Les icônes sociales spécifiques au menu mobile sont dans .nav-social-icons-mobile */
-            nav ul li a.social-icon { /* S'assure que les styles généraux s'appliquent bien */
-                 display: inline-block;
-                 margin: 0 5px;
-                 padding: 8px;
-            }
-
-
-            .header-actions {
-                width: 100%;
-                text-align: center;
-                margin-top: 10px;
-                order: 4;
-            }
-            .mobile-menu-button {
-                display: block;
-            }
-
-            .hero {
-                height: auto;
-                padding: 20px;
-            }
-            .hero-content h1 {
-                font-size: 2em;
-            }
-            .hero-content .points {
-                font-size: 1.5em;
-            }
-            .hero-nav {
-                display: none;
-            }
-
-            .armies-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .armies-header h2 {
-                margin-bottom: 10px;
-            }
-            .sort-options {
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-            .sort-options label { margin-left: 0; margin-bottom: 5px;}
-            .sort-options select {
-                flex-grow: 1;
-                margin-left: 5px;
-                margin-bottom: 10px;
-            }
-            .view-toggle {
-                width: 100%;
-                display: flex;
-                justify-content: flex-end;
-                margin-top:0;
-            }
-            .view-toggle button { margin-left: 5px;}
-
-
-            footer .container {
-                flex-direction: column;
-            }
-            footer .footer-links {
-                margin-top: 10px;
-            }
-            footer .footer-links a {
-                margin: 0 8px;
-            }
-        }
+body, h1, h2, h3, p, ul, li, a, button, select, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, nav ul li a {
+    font-family: "Sora", sans-serif;
+}
+
+:root {
+    --rouge: #9a1115;
+    --noir: #3B3B3B;
+    --bordeaux: #8A1A1A; /* Un rouge plus sombre et riche que votre accent actuel */
+    --bordeaux-transparent: #8a1a1a1b;
+    --couleur-primaire: #EDE5C0;
+    --couleur-w40k: #7394A5;
+    --couleur-fantasy: #D1B13B;
+}
+
+body {
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    /* Ajout d'un padding en haut pour compenser le header fixe */
+    padding-top: 90px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- En-tête (Nouvelle version) --- */
+header {
+    position: fixed; /* Le header reste fixé en haut */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--bordeaux-transparent); /* Fond transparent au départ */
+    backdrop-filter: blur(1px);
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: none;
+    /* Transition douce pour les changements de style */
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    background-blend-mode: color;
+}
+
+/* Style du header quand la page est défilée */
+header.scrolled {
+    background-color: var(--bordeaux);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--couleur-primaire);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: "Metamorphous", serif;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+.logo a:hover {
+    color: var(--couleur-primaire);
+}
+
+.logo a img {
+    max-height: 50px;
+    width: auto;
+    transition: max-height 0.4s ease; /* Animation sur la taille du logo */
+}
+
+/* Logo plus petit quand le header est "scrolled" */
+header.scrolled .logo a img {
+    max-height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+/* Style des liens de navigation avec effet de survol */
+nav ul li a {
+    color: var(--couleur-primaire);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+/* Effet de soulignement animé */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--couleur-primaire);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--couleur-primaire);
+    background-color: transparent; /* On enlève l'ancien fond */
+}
+
+nav ul li a.social-icon {
+    padding: 5px;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+nav ul li a.social-icon:hover {
+    color: var(--couleur-primaire);
+    background-color: transparent;
+    transform: translateY(-2px);
+}
+/* On s'assure que les icônes sociales n'ont pas l'effet de soulignement */
+nav ul li a.social-icon::after {
+    display: none;
+}
+.hidden-mobile {
+    /* Sera géré par media queries pour affichage sur grand écran */
+}
+.nav-social-icons-mobile {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Bouton d'action redessiné */
+.header-actions .btn {
+    background-color: var(--couleur-primaire);
+    color: var(--bordeaux);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px; /* Forme de pilule */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid var(--couleur-primaire);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header-actions .btn i {
+    margin-right: 8px;
+}
+
+.header-actions .btn:hover {
+    background-color: transparent;
+    color: var(--couleur-primaire);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 229, 192, 0.2);
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--couleur-primaire);
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+
+/* --- Section Héros --- */
+.hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    color: var(--couleur-primaire);
+    margin-top: -90px; /* Compense le padding-top du body pour que l'image monte derrière le header */
+}
+
+/* Le reste de votre CSS reste ici... */
+/* ... (tout le reste de votre style.css) ... */
+.hero-index {
+    background-image: url('assets/img/custodes.jpg');
+}
+.hero-w40k {
+    background-image: url('assets/img/titus.jpg');
+    background-position: center top;
+}
+.hero-aos {
+    background-image: url('assets/img/aos-banner.jpeg');
+    background-position: center top;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+.hero-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 900;
+}
+.hero-content .faction {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #eee;
+}
+.hero-content .faction i {
+    margin-right: 8px;
+    color: var(--couleur-primaire);
+}
+.hero-content .description {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+.hero-content .points {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--couleur-primaire);
+    margin-bottom: 20px;
+}
+.hero-content .btn-details {
+    background-color: var(--couleur-primaire);
+    color: var(--noir);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.hero-content .btn-details i {
+    margin-left: 8px;
+}
+.hero-content .btn-details:hover {
+    background-color: var(--couleur-primaire);
+}
+.main-content {
+    padding: 30px 0;
+    background-color: #f4f4f4; /* Assurez-vous que le contenu principal a un fond */
+    position: relative; /* Pour s'assurer qu'il est bien positionné */
+    z-index: 5; /* Au-dessus de la partie basse de l'image hero */
+}
+.main-content .container {
+    display: flex;
+    gap: 30px;
+}
+.armies-column {
+    flex: 3;
+}
+.sidebar-column {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.flex-search-reset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;;
+}
+.armies-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.armies-header h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.sort-options label,
+.sort-options select,
+.view-toggle button {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background-color: #fff;
+}
+.view-toggle button {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.view-toggle button:hover,
+.view-toggle button.active {
+    background-color: var(--noir);
+    color: #fff;
+    border-color: var(--couleur-primaire);
+}
+.army-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.army-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.army-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+.army-card .w40k-tag, .army-card .aos-tag {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+    padding: 4px 12px 4px 18px;
+    font-size: 0.75em;
+    font-weight: bold;
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 15% 100%, 0% 50%);
+}
+.army-card .w40k-tag {
+    background-color: var(--couleur-w40k);
+}
+.army-card .aos-tag {
+    background-color: var(--couleur-fantasy);
+}
+.army-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.army-card-content {
+    padding: 15px;
+}
+.army-card-content h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.army-card-content h3 a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+.army-card-content h3 a:hover {
+    color: var(--bordeaux);
+}
+.army-card-content .points {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--noir);
+    margin-bottom: 10px;
+}
+.army-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date-registered {
+    font-size: 0.85em;
+    margin-bottom: 10px;
+}
+.army-details-list {
+    list-style: none;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px;
+}
+.army-details-list li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.army-details-list li i {
+    margin-right: 8px;
+    color: #999;
+    width: 18px;
+    text-align: center;
+    font-size: 0.9em;
+}
+.army-card-actions {
+    border-top: 1px solid var(--noir);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.army-card-actions a {
+    color: var(--noir);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+}
+.army-card-actions a i {
+    margin-left: 5px;
+}
+ .army-card-actions a:hover {
+    text-decoration: underline;
+}
+.army-card-actions .icon-actions button {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1.2em;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.army-card-actions .icon-actions button:hover {
+    color: var(--rouge);
+}
+/* .pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+.pagination a {
+    padding: 8px 12px;
+    margin: 0 3px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+.pagination a:hover {
+    background-color: #eee;
+    border-color: #ccc;
+}
+.pagination a.active-page {
+    border-color: var(--couleur-primaire);
+    color: #fff;
+    background-color: var(--noir);
+}
+.pagination a i {
+    font-size: 0.8em;
+} */
+.search-widget {
+    margin-bottom: 25px;
+}
+.search-widget h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--couleur-primaire);
+    padding-bottom: 5px;
+    display: inline-block;
+    font-weight: 700;
+}
+.search-widget label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.search-widget input[type="text"],
+.search-widget select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: border-color 0.3s ease;
+}
+.search-widget input[type="text"]:focus,
+.search-widget select:focus {
+    border-color: var(--couleur-primaire);
+    outline: none;
+}
+.points-slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+.points-slider-track {
+    position: relative;
+    height: 40px;
+    margin: 20px 0;
+}
+.points-slider-track input[type="range"] {
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    width: 100%;
+    pointer-events: none;
+    background: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0;
+    z-index: 2;
+}
+.points-slider-track input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--couleur-primaire, #FFD700);
+    border: 2px solid #333;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    z-index: 3;
+}
+.points-slider-track input[type="range"]:focus {
+    outline: none;
+}
+.points-slider-range {
+    position: absolute;
+    height: 6px;
+    background: var(--couleur-primaire, #FFD700);
+    border-radius: 3px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.points-slider-track input[type="range"]::-moz-range-thumb {
+    pointer-events: all;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--couleur-primaire, #FFD700);
+    border: 2px solid #333;
+    cursor: pointer;
+}
+.points-slider-track input[type="range"]::-ms-thumb {
+    pointer-events: all;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--couleur-primaire, #FFD700);
+    border: 2px solid #333;
+    cursor: pointer;
+}
+.points-slider-track input[type="range"]::-ms-fill-lower,
+.points-slider-track input[type="range"]::-ms-fill-upper {
+    background: none;
+}
+.points-slider-track input[type="range"]::-webkit-slider-runnable-track {
+    background: none;
+}
+.points-slider-track input[type="range"]::-moz-range-track {
+    background: none;
+}
+.points-slider-track input[type="range"]::-ms-tooltip {
+    display: none;
+}
+.btn-search {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-search i {
+    margin-right: 8px;
+}
+.btn-search:hover {
+    background-color: #555;
+}
+.sidebar-featured-army {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+.sidebar-featured-army .army-card-content {
+    padding: 10px;
+}
+.sidebar-featured-army h3 {
+    font-size: 1.1em;
+}
+.sidebar-featured-army .points {
+    font-size: 1em;
+}
+.sidebar-featured-army .army-card-actions a {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+footer {
+    background-color: var(--bordeaux);
+    color: var(--couleur-primaire);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer p {
+    margin-bottom: 10px;
+    color: var(--couleur-primaire);
+}
+footer .footer-links a {
+    color: var(--couleur-primaire);
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+footer .footer-links a:hover {
+    color: var(--couleur-primaire);
+}
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--couleur-primaire);
+    color: var(--bordeaux);
+    border: solid 0.5px var(--noir);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+}
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background-color: var(--couleur-primaire);
+}
+
+
+/* --- Styles responsives --- */
+@media (max-width: 992px) {
+    .main-content .container {
+        flex-direction: column;
+    }
+    .armies-column, .sidebar-column {
+        flex: none;
+        width: 100%;
+    }
+    .sidebar-column {
+        margin-top: 30px;
+    }
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .logo {
+        flex-shrink: 0;
+    }
+    nav {
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+        order: 3;
+        background-color: var(--noir); /* Ajout d'un fond pour la lisibilité */
+        border-radius: 4px;
+        padding: 10px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+    .nav-social-icons-mobile {
+        display: none;
+    }
+    nav.active .nav-social-icons-mobile {
+        display: block; /* Afficher quand le menu est actif */
+    }
+    nav ul li a.social-icon {
+         display: inline-block;
+         margin: 0 5px;
+         padding: 8px;
+    }
+    .header-actions {
+        order: 2; /* Le bouton passe à côté du logo/burger */
+        width: auto;
+        margin-top: 0;
+    }
+    .mobile-menu-button {
+        display: block;
+        order: 1;
+    }
+    .hero {
+        margin-top: -85px; /* Ajuster pour le header mobile */
+    }
+}
