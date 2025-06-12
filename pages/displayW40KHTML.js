@@ -1,5 +1,5 @@
 import { displayArmiesW40KHTML, getUniqueFactions } from "../utils/armiesHTML.js";
-import { searchFilter, setupSortByDate, sortArmiesByPoints, header } from "../utils/app.js";
+import { searchFilter, setupSortByDate, sortArmiesByPoints, headerDesign } from "../utils/app.js";
 
 displayArmiesW40KHTML();
 getUniqueFactions();
@@ -7,4 +7,4 @@ getUniqueFactions();
 searchFilter();
 setupSortByDate();
 sortArmiesByPoints();
-header();
+headerDesign();

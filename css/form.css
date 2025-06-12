@@ -13,15 +13,15 @@ header {
 .form-flex {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem; /* Légèrement augmenter l'espacement */
-    width: 90%; /* Plus flexible pour les petits écrans */
-    max-width: 700px; /* Limite la largeur sur les très grands écrans */
-    margin: 40px auto; /* Un peu plus d'espace en haut */
-    padding: 30px; /* Plus d'espace intérieur */
-    background-color: #fff; /* Fond blanc explicite */
-    border-radius: 8px; /* Coins arrondis */
-    border: 1px solid #e0e0e0; /* Bordure subtile */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
+    gap: 1.2rem;
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-flex input[type="text"],
@@ -36,7 +36,7 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    font-family: 'Inter', sans-serif; /* Utiliser la police du site */
+    font-family: 'Inter', sans-serif;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -44,15 +44,15 @@ header {
 .form-flex select:focus,
 .form-flex textarea:focus {
     outline: none;
-    border-color: var(--couleur-primaire); /* Utilise la couleur primaire du site */
-    box-shadow: 0 0 5px var(--bordeaux-transparent); /* Ombre douce assortie */
+    border-color: var(--couleur-primaire);
+    box-shadow: 0 0 5px var(--bordeaux-transparent);
 }
 
 .form-flex label {
     font-weight: bold;
-    font-family: 'Sora', sans-serif; /* Police des titres pour les labels */
+    font-family: 'Sora', sans-serif;
     color: var(--noir);
-    margin-bottom: -5px; /* Rapproche le label de son champ */
+    margin-bottom: -5px;
 }
 
 .form-flex input[type="file"]::file-selector-button {
@@ -72,11 +72,11 @@ header {
 #submit-army {
     width: 50%;
     padding: 12px 20px;
-    margin: 20px auto 0 auto; /* Centrer le bouton et ajouter de l'espace au-dessus */
+    margin: 20px auto 0 auto;
     background-color: var(--bordeaux);
     color: white;
     border: 2px solid var(--bordeaux);
-    border-radius: 50px; /* Forme de pilule comme les autres boutons */
+    border-radius: 50px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
@@ -87,7 +87,7 @@ header {
 #submit-army:hover {
     background-color: transparent;
     color: var(--bordeaux);
-    transform: translateY(-3px); /* Effet de soulèvement */
+    transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 

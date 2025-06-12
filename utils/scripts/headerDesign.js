@@ -1,5 +1,5 @@
 // Attend que le contenu de la page soit entièrement chargé
-export function header() {
+export function headerDesign() {
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Gestion du header au défilement ---

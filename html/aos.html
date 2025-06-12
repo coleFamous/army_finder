@@ -44,14 +44,14 @@
         <div class="hero-content">
             <h1>Age of Sigmar</h1>
             <p class="description">"Aye, the Empire needs heirs. And you are all my heirs. Everyone who lives in this land is my heir. Everyone who fights and bleeds to protect the Empire....They will all be Sigmar’s heirs"</p>
-            <a href="#" class="btn-details">Voir les armées<i class="fas fa-arrow-down"></i></a>
+            <a href="#anchor-aos" class="btn-details">Voir les armées<i class="fas fa-arrow-down"></i></a>
         </div>
         <!-- <div class="hero-nav">
             <button title="Précédent"><i class="fas fa-chevron-left"></i></button>
             <button title="Suivant"><i class="fas fa-chevron-right"></i></button>
         </div> -->
     </section>
-        <main class="main-content">
+    <main class="main-content" id="anchor-aos">
         <div class="container">
             <div class="armies-column">
                 <div class="armies-header">
@@ -70,13 +70,13 @@
                 <div class="army-grid" id="resultList">
                     <!-- Armées générées en JS -->
                 </div>
-                <div class="pagination">
+                <!-- <div class="pagination">
                     <a href="#"><i class="fas fa-chevron-left"></i> Précedent</a>
                     <a href="#" class="active-page">1</a>
                     <a href="#">2</a>
                     <a href="#">3</a>
                     <a href="#">Suivant <i class="fas fa-chevron-right"></i></a>
-                </div>
+                </div> -->
             </div>
 
             <aside class="sidebar-column">
@@ -118,9 +118,9 @@
                         <img src="/assets/img/orks.jpg" alt="Armée d'orks">
                         <div class="army-card-content">
                             <div class="w40k-tag">WARHAMMER 40K</div>
-                            <h3><a href="#">Ork</a></h3>
+                            <h3><a href="army.html?id=4">Ork</a></h3>
                             <p class="points">1,000 points</p>
-                            <div class="army-card-actions"> <a href="#">Détails <i class="fas fa-arrow-right"></i></a>
+                            <div class="army-card-actions"> <a href="army.html?id=4">Détails <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </article>
@@ -128,10 +128,10 @@
                         <img src="/assets/img/ultramarine.jpg" alt="Armée ultramarine">
                         <div class="army-card-content">
                             <div class="w40k-tag">WARHAMMER 40K</div>
-                            <h3><a href="#">Ultramarines</a></h3>
+                            <h3><a href="army.html?id=5">Ultramarines</a></h3>
                             <p class="points">3,000 points</p>
                             <div class="army-card-actions">
-                                <a href="#">Détails <i class="fas fa-arrow-right"></i></a>
+                                <a href="army.html?id=5">Détails <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </article>
@@ -143,8 +143,8 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#">Politique de Confidentialité</a>
-                <a href="#">Conditions d'utilisation</a>
+                <a href="/html/politique_de_confidentialité.html">Politique de Confidentialité</a>
+                <a href="/html/cgu.html">Conditions d'utilisation</a>
             </div>
             <p>Site non-affilié à Games Workshop</p>
         </div>

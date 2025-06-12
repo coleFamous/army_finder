@@ -1,5 +1,5 @@
 import { displayArmiesAOSHTML, getUniqueFactions } from "../utils/armiesHTML.js";
-import { searchFilter, setupSortByDate, sortArmiesByPoints, header } from "../utils/app.js";
+import { searchFilter, setupSortByDate, sortArmiesByPoints, headerDesign } from "../utils/app.js";
 
 displayArmiesAOSHTML();
 getUniqueFactions();
@@ -7,4 +7,4 @@ getUniqueFactions();
 searchFilter();
 setupSortByDate();
 sortArmiesByPoints();
-header();
+headerDesign();
