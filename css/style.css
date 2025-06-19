@@ -461,32 +461,6 @@ nav ul li a.social-icon::after {
 .army-card-actions .icon-actions button:hover {
     color: var(--rouge);
 }
-/* .pagination {
-    text-align: center;
-    margin-top: 30px;
-}
-.pagination a {
-    padding: 8px 12px;
-    margin: 0 3px;
-    border: 1px solid #ddd;
-    text-decoration: none;
-    color: #333;
-    border-radius: 3px;
-    background-color: #fff;
-    transition: background-color 0.3s, color 0.3s;
-}
-.pagination a:hover {
-    background-color: #eee;
-    border-color: #ccc;
-}
-.pagination a.active-page {
-    border-color: var(--couleur-primaire);
-    color: #fff;
-    background-color: var(--noir);
-}
-.pagination a i {
-    font-size: 0.8em;
-} */
 .search-widget {
     margin-bottom: 25px;
 }
