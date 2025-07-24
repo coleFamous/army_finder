@@ -12,33 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img class="logo-img" src="/assets/logo/logo.png" alt="logo">Army Finder</a>
-            </div>
-            <button class="mobile-menu-button" id="mobileMenuToggle" aria-label="Ouvrir le menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="w40k.html">W40K</a></li>
-                    <li><a href="aos.html" class="active">Age of Sigmar</a></li>
-                    <li><a href="#">Contacter</a></li>
-                    <li class="hidden-mobile"><a href="inscription.html" title="inscription" class="social-icon"><i class="fa-solid fa-user-plus"></i></a></li>
-                    <li class="hidden-mobile"><a href="connexion.html" title="connexion" class="social-icon"><i class="fa-solid fa-user-lock"></i></a></li>
-                </ul>
-                <div class="nav-social-icons-mobile">
-                    <a href="inscription.html" title="inscription" class="social-icon"><i class="fa-solid fa-user-plus"></i></a>
-                    <a href="connexion.html" title="connexion" class="social-icon"><i class="fa-solid fa-user-lock"></i></a>
-                </div>
-            </nav>
-            <div class="header-actions">
-                <a href="form.html" class="btn"><i class="fas fa-plus-circle"></i>Ajouter une armée</a>
-            </div>
-        </div>
-    </header>
+    <div data-include="header.html"></div>
 
     <section class="hero hero-aos">
         <div class="hero-content">
@@ -46,10 +20,6 @@
             <p class="description">"Aye, the Empire needs heirs. And you are all my heirs. Everyone who lives in this land is my heir. Everyone who fights and bleeds to protect the Empire....They will all be Sigmar’s heirs"</p>
             <a href="#anchor-aos" class="btn-details">Voir les armées<i class="fas fa-arrow-down"></i></a>
         </div>
-        <!-- <div class="hero-nav">
-            <button title="Précédent"><i class="fas fa-chevron-left"></i></button>
-            <button title="Suivant"><i class="fas fa-chevron-right"></i></button>
-        </div> -->
     </section>
     <main class="main-content" id="anchor-aos">
         <div class="container">
@@ -70,13 +40,6 @@
                 <div class="army-grid" id="resultList">
                     <!-- Armées générées en JS -->
                 </div>
-                <!-- <div class="pagination">
-                    <a href="#"><i class="fas fa-chevron-left"></i> Précedent</a>
-                    <a href="#" class="active-page">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">Suivant <i class="fas fa-chevron-right"></i></a>
-                </div> -->
             </div>
 
             <aside class="sidebar-column">
@@ -140,18 +103,10 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="/html/politique_de_confidentialité.html">Politique de Confidentialité</a>
-                <a href="/html/cgu.html">Conditions d'utilisation</a>
-            </div>
-            <p>Site non-affilié à Games Workshop</p>
-        </div>
-    </footer>
+    <div data-include="footer.html"></div>
 
     <a href="#" class="back-to-top" id="backToTopBtn" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
     <script type="module" src="/pages/displayAOSHTML.js"></script>
-    
+    <script type="module" src="/pages/displayHeaderFooter.js"></script>
 </body>
 </html>
